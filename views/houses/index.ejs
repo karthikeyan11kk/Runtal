@@ -1,0 +1,124 @@
+
+    <% layout("layout/boilerplate") %>
+
+    <% for(let house of houses)
+    { %>
+        <div class="row mainhouse">
+            <div class="col-lg-4 mt-2">
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="2000">
+                        <div class="carousel-inner">
+                            <% house.images.forEach((img,i)=> {    %>
+                          <div class="carousel-item <%= i=== 0 ? 'active':'' %>">
+                            <img class="d-block" src="<%= img.url %>" width="350px" height="230px">
+                          </div>
+                          <% }) %>
+                        </div>
+                    </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="main mt-2">
+                    <h5 class="text-muted"> <%= house.bedroom %> Houses for rent in <%= house.location %> , <%= house.city %></h5>         
+                    <div class="feature bg-light text-black text-center">
+                    <div class="row py-2">
+                        <div class="col-lg-4">
+                            <img src="/icon/bedroom.png" height="20px" width="25px"  >  
+                            <h6 class="text-muted">Bedroom</h6>
+                            <small><%= house.bedroom %></small>  
+                        </div>
+                        <div class="col-lg-4">
+                            <img src="/icon/furnished.png" height="20px" width="25px"  >  
+                            <h6 class="text-muted">Furnished</h6>
+                            <small><%= house.furnished %></small> 
+                        </div>
+                        <div class="col-lg-4">
+                            <img class="img-fluid" src="/icon/area.png" height="20px" width="25px">  
+                            <h6 class="text-muted">Area</h6> 
+                            <small><%= house.area %></small> 
+                        </div>
+                    </div>
+                    <div class="row py-2">
+                        <div class="col-lg-4">
+                            <img class="img-fluid" src="/icon/parking.png" height="20px" width="25px" > 
+                            <h6 class="text-muted">Parking</h6> 
+                            <small><%= house.parking %></small>  
+                        </div>
+                        <div class="col-lg-4">
+                            <img class="img-fluid" src="/icon/floor.png" height="20px" width="25px">  
+                            <h6 class="text-muted">Floor</h6> 
+                            <small><%= house.floor %></small> 
+                        </div>
+                        <div class="col-lg-4">
+                            <img class="img-fluid" src="/icon/facing.png" height="20px" width="25px" >  
+                            <h6 class="text-muted">Facing</h6> 
+                            <small><%= house.facing %></small> 
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-2 bg-white text-center">
+                
+                    <h6 class="text-muted mt-4">Price</h6> 
+                    <h3><%= house.price %></h3>
+                    <div class="price"></div>
+                    <a class="btn bg-black text-white" href="/house/<%= house.id %>" >More Details</a>
+                    <a  class="btn bg-black text-white" href="">Contact Owner</a>
+                </div>
+                
+      </div>
+
+            </div>
+
+<style>
+    .owner{
+        text-align: left;
+        margin-left: 20px;
+    }
+    .image{
+        text-align: center;
+        margin-left: 10px;
+        padding: 15px;
+    }
+    .mainhouse{
+        border: grey solid 1px;
+        border-radius: 20px;
+        margin:30px 0px;
+        padding:20px;
+    }
+    .mainhouse:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .price{
+        padding:10px;
+    }
+    .btn{
+        width: 150px;
+        padding:10px;
+        margin-top: 10px;
+        background-color:black;
+        color:white;
+        outline: none;    
+        }
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Get all elements with the class 'contact-btn'
+        var contactButtons = document.querySelectorAll('.contact-btn');
+        
+        // Loop through each button
+        contactButtons.forEach(function(button) {
+            // Add click event listener to each button
+            button.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent the default link behavior
+                
+                var ownerNumber = '<%= house.ownerno %>'; // Retrieve owner's number from EJS
+                
+                // Display a popup with the owner's number
+                alert("Owner's Number: " + ownerNumber);
+                
+            });
+        });
+    });
+</script>
+
+<%} %>

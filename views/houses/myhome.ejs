@@ -1,0 +1,100 @@
+
+<% layout("layout/boilerplate") %>
+<center>
+</center>
+<% for(let house of houses)
+{ %>
+<div class="row mainhouse text-center">
+
+    <div class="col-lg-4 mt-2">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <% house.images.forEach((img,i)=> {    %>
+              <div class="carousel-item <%= i=== 0 ? 'active':'' %>">
+                <img class="d-block" src="<%= img.url %>" width="350px" height="230px">
+              </div>
+              <% }) %>
+            </div>
+        </div>
+</div>
+    <div class="col-md-6">
+        <div class="main mt-2">
+            <h5 class="text-muted"> <%= house.bedroom %> Houses for rent in <%= house.city %> , <%= house.state%></h5>
+            <br>
+            <div class="feature bg-light">
+            <div class="row py-2">
+                <div class="col-lg-4">
+                    <img src="/icon/bedroom.png" height="20px" width="25px"  >  
+                    <h6 class="text-muted">Bedroom</h6>
+                    <small><%= house.bedroom %></small>  
+                </div>
+                <div class="col-lg-4">
+                    <img src="/icon/furnished.png" height="20px" width="25px"  >  
+                    <h6 class="text-muted">Furnished</h6>
+                    <small><%= house.furnished %></small> 
+                </div>
+                <div class="col-lg-4">
+                    <img class="img-fluid" src="/icon/area.png" height="20px" width="25px">  
+                    <h6 class="text-muted">Area</h6> 
+                    <small><%= house.area %></small> 
+                </div>
+            </div>
+            <div class="row py-2">
+                <div class="col-lg-4">
+                    <img class="img-fluid" src="/icon/parking.png" height="20px" width="25px" > 
+                    <h6 class="text-muted">Parking</h6> 
+                    <small><%= house.parking %></small>  
+                </div>
+                <div class="col-lg-4">
+                    <img class="img-fluid" src="/icon/floor.png" height="20px" width="25px">  
+                    <h6 class="text-muted">Floor</h6> 
+                    <small><%= house.floor %></small> 
+                </div>
+                <div class="col-lg-4">
+                    <img class="img-fluid" src="/icon/facing.png" height="20px" width="25px" >  
+                    <h6 class="text-muted">Facing</h6> 
+                    <small><%= house.facing %></small> 
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="col-md-2 details">
+        <div class="price mt-5 d-flex flex-column">
+            <a href="/house/<%= house.id %>" class="btn">More Details</a>
+            <a href="/house/<%= house.id %>/edit" class="btn">Edit</a>
+            <form action="/house/<%= house.id %>?_method=delete" method="post">
+                <button class="btn">Delete</button>
+            </form>
+        </div>
+    </div>
+
+    </div>
+
+<style>
+
+.mainhouse{
+border: grey solid 1px;
+border-radius: 20px;
+margin:30px 0px;
+padding:20px 10px;
+}
+.mainhouse:hover{
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn{
+width: 150px;
+padding: 10px;
+margin-top: 10px;
+background-color:white;
+color:black;
+outline: none;    
+}
+.details{
+    background-color: black;
+
+}
+</style>
+
+<%} %>

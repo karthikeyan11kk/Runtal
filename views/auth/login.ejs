@@ -1,0 +1,74 @@
+<% layout("layout/boilerauth") %>
+    <form action="/login" method="post" novalidate class="needs-validation py-4  ">
+        <div class="row  register py-5 ">
+            <div class="col-6 ">
+                <h1 class="text-white text-center mb-5">LOGIN</h1>
+                  <div class="row mb-3">
+                    <div class="col-md-7">
+                            <label for="username" class="form-label">E-mail</label>
+                            <input type="text" class="form-control" id="username" name="username" required>   
+                            <div class="valid-feedback">
+                              Valid
+                            </div>
+                            <div class="invalid-feedback">
+                              Invalid
+                            </div>                      
+                    </div>
+                    <div class="col-md-5">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="text" class="form-control" id="password" name="password" required>   
+                            <div class="valid-feedback">
+                              Valid
+                            </div>
+                            <div class="invalid-feedback">
+                              Invalid
+                            </div>                      
+                    </div>
+                  </div>
+                  <a href="/forgot password" class="text-white">Forgot Password</a>
+                      <div class="mb-3">
+                      <center>
+                    <button class="btn bg-white text-black px-5">Login</button>
+                    <br>
+                    <a href="/register" class="text-white">Register</a>
+                  </center>
+            </div>
+            </div>
+        </div>
+    </form>
+
+    <style>
+        form{
+            margin-top: 90px;
+        }
+        .btn{
+        margin-top: 25px;
+        margin-bottom: 10px;
+        width: 250px;
+        padding: 8px 20px;
+        outline: none;    
+        }
+    .register{
+        background-color: black;
+        align-items: center;
+        color: white;
+        justify-content: center;
+        border: grey solid 1px;
+        border-radius: 25px;
+        
+    }
+    .register:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .register input{
+     color: black;
+     outline: none;
+}
+.input-group{
+     color: black;
+     outline: none;
+}
+    </style>
+
+
+

@@ -1,0 +1,230 @@
+
+<% layout("layout/boilerplate") %><!-- Include the boilerplate layout -->
+
+    <div class="mainhouse show mb-4 py-3">
+        <div class="row">
+            <div class="col text-center">
+                    <h5 class="text-muted"> <%= house.bedroom %> Houses for rent in <%= house.location %> , <%= house.city %></h5>
+                    <div class="feature bg-light text-black ">
+                        <!-- Display house features -->
+                        <div class="row py-2">
+                            <!-- Bedroom -->
+                            <div class="col-lg-4">
+                                <img src="/icon/bedroom.png" height="20px" width="25px">
+                                <h6 class="text-muted">Bedroom</h6>
+                                <small><%= house.bedroom %></small>
+                            </div>
+
+                            <!-- Furnished -->
+                            <div class="col-lg-4">
+                               <img src="/icon/furnished.png" height="20px" width="25px">
+                                <h6 class="text-muted">Furnished</h6>
+                                <small><%= house.furnished %></small>
+                            </div>
+
+                            <!-- Area -->
+                            <div class="col-lg-4">
+                               <img class="img-fluid" src="/icon/area.png" height="20px" width="25px">
+                                <h6 class="text-muted">Area</h6>
+                                <small><%= house.area %></small>
+                            </div>
+                        </div>
+                        
+                        <div class="row py-2">
+                            <!-- Parking -->
+                            <div class="col-lg-4">
+                                <img class="img-fluid" src="/icon/parking.png" height="20px" width="25px">
+                                <h6 class="text-muted">Parking</h6>
+                                <small><%= house.parking %></small>
+                            </div>
+
+                            <!-- Floor -->
+                            <div class="col-lg-4">
+                                <img class="img-fluid" src="/icon/floor.png" height="20px" width="25px">
+                                <h6 class="text-muted">Floor</h6></h6>
+                                <small><%= house.floor %></small>
+                            </div>
+
+                            <!-- Facing -->
+                            <div class="col-lg-4">
+                                <img class="img-fluid" src="/icon/facing.png" height="20px" width="25px">
+                                <h6 class="text-muted">Facing</h6></h6>
+                                <small><%= house.facing %></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="MoreDetails">
+    <div class="details">
+        <h2>House Details</h2>
+        <hr>
+        <div class="row">
+        <div class="col">
+        <div class="row py-2">
+        <div class="col-md-4">
+            <h5>Runtal Value:</h5>
+            <h6><%= house.price %></h6>
+        </div>
+        <div class="col-md-4">
+            <h5>Security Deposit:</h5>
+            <h6><%= house.Securityamt %></h6>
+        </div>
+        <div class="col-md-4">
+            <h5>Age of Construction:</h5>
+            <h6><%= house.buildage %></h6>
+        </div>
+    </div>
+        <div class="row py-2">
+        <div class="col-md-4">
+            <h5>Additional Rooms:</h5>
+            <h6><%= house.extraroom %></h6>
+        </div>
+        <div class="col-md-4">
+            <h5>Water Availability:</h5>
+            <h6><%= house.water %></h6>
+        </div>
+        <div class="col-md-4">
+            <h5>Status of Electricity:</h5>
+            <h6><%= house.water %></h6>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<div class="details">
+    <h5>Description:</h5>
+    <h6><%= house.description%></h6>
+</div>
+<div class="details">
+    <h2>House Location</h2>
+    <hr>
+    <div class="row">
+        <div class="col-md-4">
+            <h5>Address:</h5>
+            <h6><%= house.address%></h6>
+        </div>
+        
+        <div class="col-md-4">
+            <h5>Location:</h5>
+            <h6><%= house.location %></h6>
+        </div>
+        <div class="col-md-2">
+            <h5>State:</h5>
+            <h6><%= house.state %></h6>
+        </div>
+        <div class="col-md-2">
+            <h5>City:</h5>
+            <h6><%= house.city %></h6>
+        </div>
+    </div>
+    <iframe
+  width="1100"
+  height="250"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=City, Address, State" allowfullscreen>
+</iframe>
+
+</div>
+
+
+
+
+
+
+
+
+    <div class="details">
+        <h2>House Images</h2>
+        <hr>
+            <div class="imgcontainer"> 
+                    <% for(let img of house.images){    %>
+                    
+                          <img src="<%= img.url %>" width="350px" height="230px">
+
+                        <% } %>
+              </div>
+            </div>
+          </div>
+          
+
+
+    </div>
+
+    <div class="details">
+        <h2>Owner Details</h2>
+        <hr>
+    <div class="row">
+        <div class="col-md-4">
+            <h5>Name:</h5>
+            <h6><%=user.surname %></h6>
+        </div>
+        <div class="col-md-4">
+            <h5>E-mail:</h5>
+            <h6><%=user.username%></h6>
+        </div>
+        <div class="col-md-4">
+            <h5>Phone Number:</h5>
+            <h6><%=user.phone %></h6>
+        </div>
+        </div>
+    </div>
+
+    
+    <div class="footerbox">
+    <div class="boxbtn d-flex justify-content-around">
+        <div class="btnn">
+            <a href="/house" class="btn text-dark">BACK</a>
+        </div>
+        <div class="btnn">
+            <a href="" class="btn text-dark">CONTACT</a>
+        </div>
+        <div class="btnn">
+            <form action="/wishreq" method="post">
+                <input type="hidden" name="houseId" value="<%= house._id %>">
+                <button class="btn">ADD TO WHISHLIST</button>
+            </form>
+        </div>
+        <div class="btnn">
+            <form action="/bookreq" method="post">
+                <button class="btn">BOOK HOUSE</button>
+            </form>
+        </div>
+        </div>
+    </div>
+
+
+</div>
+    <style>
+        .mainhouse {
+            margin-top: 25px;
+            margin-bottom: 25px;
+            padding: 0px 25px 0px 0px;
+        }
+        .details{
+            margin:50px 0px;
+        }
+        hr {
+            width: 100%;
+           background-color: black;
+            }
+        .footerbox{
+            margin: 50px 0px;
+            background-color: black;
+            padding: 25px;
+        }
+        .btn{
+width: 200px;
+padding: 10px;
+margin-top: 10px;
+background-color:white;
+color:black;
+font-style: bold;
+outline: none;    
+}
+</style>
+

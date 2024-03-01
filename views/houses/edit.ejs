@@ -1,0 +1,502 @@
+
+    <% layout("layout/boilerplate") %>
+    <h1>edit</h1>
+    <form action="/house/<%= house.id %>?_method=put"method="post" noate class="needs-ation">
+          <div class="row py-5">
+              <div class="col-lg-6">
+                    <div class="mb-3">
+                      <label for="address" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="address" name="house[address]" value="<%= house.address%>"required>
+                        <div class="valid-feedback">
+                          Valid
+                        </div>
+                        <div class="invalid-feedback">
+                          Invalid
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                      <div class="col-md-6">
+                        <label for="location" class="form-label">Location</label>
+                        <input type="text" class="form-control" id="inputZip" name="house[landmark]" value="<%= house.location%>" required>
+                        <div class="valid-feedback">
+                          Valid
+                        </div>
+                        <div class="invalid-feedback">
+                          Invalid
+                        </div>
+                      </div>
+                    <div class="col-md-6">
+                      <label for="city" class="form-label">City</label>
+                      <input type="text" class="form-control" id="city" name="house[city]" value="<%= house.city%>" required>
+                      <div class="valid-feedback">
+                        Valid
+                      </div>
+                      <div class="invalid-feedback">
+                        Invalid
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-md-6">
+                      <label for="state" class="form-label">State</label>
+                      <input type="text" class="form-control" id="state" name="house[state]" value="<%= house.state%>" required>
+                      <div class="valid-feedback">
+                        Valid
+                      </div>
+                      <div class="invalid-feedback">
+                        Invalid
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <label for="zip" class="form-label">Zip</label>
+                      <input type="text" class="form-control" id="zip" name="house[zip]" value="<%= house.zip%>"required>
+                      <div class="valid-feedback">
+                        Valid
+                      </div>
+                      <div class="invalid-feedback">
+                        Invalid
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <label for="houseno" class="form-label">House No</label>
+                      <input type="text" class="form-control" id="houseno" name="house[houseno]" value="<%= house.houseno%>"required>
+                      <div class="valid-feedback">
+                        Valid
+                      </div>
+                      <div class="invalid-feedback">
+                        Invalid
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-md-4">
+                      <label for="water" class="form-label">Water Availability</label>
+                      <select id="water" class="form-select" name="house[water]"required>
+                        <option selected disaabled value="<%= house.water %>">Choose...</option>
+                        <option>24 Hours</option>
+                        <option>Weekely ones</option>
+                        <option>Moderate</option>
+                        <option>Rare</option>
+                        <option>Available</option>
+                      </select>
+                      <div class="valid-feedback">
+                        Valid
+                      </div>
+                      <div class="invalid-feedback">
+                        Invalid
+                      </div>
+                      </div>
+                      <div class="col-md-4">
+                      <label for="extraroom" class="form-label">Additional Rooms</label>
+                      <select id="extraroom" class="form-select" name="house[extraroom]" required>
+                        <option selected disabled value="<%= house.extraroom %>">Choose...</option>
+                        <option>Puja Room</option>
+                        <option>Study Room</option>
+                        <option>Office Room</option>
+                        <option>Store Room</option>
+                        <option>Puja and Store Room Available </option>
+                        <option>Office,Store and Puja Room Available </option>
+                      </select>
+                      <div class="valid-feedback">
+                        Valid
+                      </div>
+                      <div class="invalid-feedback">
+                        Invalid
+                      </div>
+                      </div>
+                    <div class="col-md-4">
+                      <label for="overlook" class="form-label">Overlooking</label>
+                      <input type="text" class="form-control" id="houseno" name="house[overlook]" value="<%= house.overlook%>"required>
+                      <div class="valid-feedback">
+                        Valid
+                      </div>
+                      <div class="invalid-feedback">
+                        Invalid
+                      </div>
+                    </div>
+              </div>
+              <div class="mb-3">
+                <label for="landmark" class="form-label">Landmark(LINK)</label>
+                  <input type="text" class="form-control" id="address" name="house[location]" value="<%= house.landmark%>"required>
+                  <div class="valid-feedback">
+                    Valid
+                  </div>
+                  <div class="invalid-feedback">
+                    Invalid
+                  </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-6">
+               
+              <div class="row mb-3">
+                  <div class="col-md-4">
+                  <label for="bedroom" class="form-label">Bedroom</label>
+                  <select id="bedroom" class="form-select" name="house[bedroom]"required>
+                    <option selected disaabled value="<%= house.bedroom %>">Choose...</option>
+                    <option>4BHK</option>
+                    <option>3BHK</option>
+                    <option>2BHK</option>
+                    <option>1BHK</option>
+                  </select>
+                  <div class="valid-feedback">
+                    Valid
+                  </div>
+                  <div class="invalid-feedback">
+                    Invalid
+                  </div>
+                  </div>
+              
+         
+                  <div class="col-md-4">
+                      <label for="parking" class="form-label">Parking</label>
+                      <select id="parking" class="form-select" name="house[parking]"required>
+                        <option selected disabled value="<%= house.parking %>">Choose...</option>
+                        <option>4 wheeler Parking</option>
+                        <option>2 Wheeler Parking</option>
+                        <option>Both Parking</option>
+                        <option>No Parking</option>
+                      </select>
+                      <div class="valid-feedback">
+                        Valid
+                      </div>
+                      <div class="invalid-feedback">
+                        Invalid
+                      </div>
+                      </div>
+                      <div class="col-md-4">
+                          <label for="bathroom" class="form-label">Bathrooms</label>
+                          <select id="bathroom" class="form-select" name="house[bathroom]"required>
+                            <option selected disabled value="<%= house.bathroom %>">Choose...</option>
+                              <option>4</option>
+                              <option>3</option>
+                              <option>2</option>
+                              <option>1</option>
+                          </select>
+                          <div class="valid-feedback">
+                            Valid
+                          </div>
+                          <div class="invalid-feedback">
+                            Invalid
+                          </div>
+                          </div>
+                  </div>
+  
+              <div class="row mb-3">
+                  <div class="col-md-3">
+                  <label for="floor" class="form-label">Floors</label>
+                  <select id="floor" class="form-select" name="house[floor]"required>
+                    <option selected disabled value="<%= house.floor %>">Choose...</option>
+                    <option>4</option>
+                    <option>3</option>
+                    <option>2</option>
+                    <option>1</option>
+                    <option>G</option>
+                  </select>
+                  <div class="valid-feedback">
+                    Valid
+                  </div>
+                  <div class="invalid-feedback">
+                    Invalid
+                  </div>
+                  </div>
+                      <div class="col-md-3">
+                          <label for="area" class="form-label">Area(sqft)</label>
+                          <input type="text" class="form-control" id="area" name="house[area]" value="<%= house.area%>" required>
+                          <div class="valid-feedback">
+                            Valid
+                          </div>
+                          <div class="invalid-feedback">
+                            Invalid
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <label for="facing" class="form-label">Facing</label>
+                          <select id="facing" class="form-select" name="house[facing]"required>
+                            <option selected disabled value="<%= house.facing %>">Choose...</option>
+                            <option>North</option>
+                            <option>South</option>
+                            <option>East</option>
+                            <option>West</option>
+                          </select>
+                          <div class="valid-feedback">
+                            Valid
+                          </div>
+                          <div class="invalid-feedback">
+                            Invalid
+                          </div> 
+                          </div>
+                          <div class="col-md-3">
+                            <legend class="col-form-label col-sm-2 pt-0">Furnished</legend>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="house[furnished]" id="gridRadios1" value="<%= house.furnished %>" checked>
+                              <label class="form-check-label" for="gridRadios1">
+                                Default
+                              </label>
+                            </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="house[furnished]" id="gridRadios1" value=" Full Furnished">
+                                <label class="form-check-label" for="gridRadios1">
+                                  Full Furnished
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="house[furnished]" id="Semi Furnished" value="Semi Furnished">
+                                <label class="form-check-label" for="Semi Furnished">
+                                    Semi Furnished
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="house[furnished]" id="Unfurnished" value="Unfurnished">
+                                <label class="form-check-label" for=" Unfurnished">
+                                    Unfurnished
+                                </label>
+                              </div>          
+                    </div>
+                  </div>
+                  <div class="row mb-4">
+                    <div class="col-md-4">
+                      <label for="buildage" class="form-label">Age of Construction</label>
+                      <input type="text" class="form-control" id="image" name="house[buildage]" value="<%= house.buildage%>"required>
+                      <div class="valid-feedback">
+                        Valid
+                      </div>
+                      <div class="invalid-feedback">
+                        Invalid
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <label for="Securityamt" class="form-label">Security Deposit</label>
+                      <input type="text" class="form-control" id="image" name="house[Securityamt]" value="<%= house.Securityamt%>"required>
+                      <div class="valid-feedback">
+                        Valid
+                      </div>
+                      <div class="invalid-feedback">
+                        Invalid
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <label for="price" class="form-label">Runtal Price</label>
+                      <input type="text" class="form-control" id="price" name="house[price]" value="<%= house.price %>"required>
+                      <div class="valid-feedback">
+                        Valid
+                      </div>
+                      <div class="invalid-feedback">
+                        Invalid
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mb-4">
+                    <div class="col-md-6">
+                      <label for="fronthouse" class="form-label">Front House Image</label>
+                      <input type="file" class="form-control" id="image" name="house[fronthouse]" value="<%= house.fronthouse %>"required>
+                      <div class="valid-feedback">
+                        Valid
+                      </div>
+                      <div class="invalid-feedback">
+                        Invalid
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="images" class="form-label">Rooms Images</label>
+                      <input type="file" class="form-control" id="image" name="house[images]" value="<%= house.images %>"required>
+                      <div class="valid-feedback">
+                        Valid
+                      </div>
+                      <div class="invalid-feedback">
+                        Invalid
+                      </div>
+                    </div>
+                  </div>
+          </div>
+    
+        <label for="description" class="form-label">Description</label>
+        <textarea class="form-control" id="image" name="house[description]" value="<%= house.description %>"required></textarea>
+        <div class="valid-feedback">
+          Valid
+        </div>
+        <div class="invalid-feedback"> 
+          Invalid
+        </div>
+  
+  
+  
+        <div class="mb-4">
+          <center>
+        <button class="btn bg-black text-white px-5">Edit</button>
+      </center>
+    </div>
+  </div>
+      </form>
+  
+      <style>
+        .btn{
+        margin-top: 25px;
+        width: 180px;
+        padding: 8px 20px;
+        outline: none;    
+        }
+        </style>
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="row mb-3">
+      <div class="col-md-4">
+      <label for="bedroom" class="form-label">Bedroom</label>
+      <select id="bedroom" class="form-select" name="house[bedroom]"  required>
+        <option selected value="<%= house.bedroom %>">Default</option>
+        <option>4BHK</option>
+        <option>3BHK</option>
+        <option>2BHK</option>
+        <option>1BHK</option>
+      </select>
+      </div>
+  
+
+      <div class="col-md-4">
+          <label for="parking" class="form-label">Parking</label>
+          <select id="parking" class="form-select" name="house[parking]" required>
+            <option selected value="<%= house.parking %>">Default</option>
+            <option>4 wheeler Parking</option>
+            <option>2 Wheeler Parking</option>
+            <option>Both Parking</option>
+            <option>No Parking</option>
+          </select>
+          </div>
+          <div class="col-md-4">
+              <label for="bathroom" class="form-label">Bathrooms</label>
+              <select id="bathroom" class="form-select" name="house[bathroom]"  required>
+                <option selected  value="<%= house.bathroom %>">Default</option>
+                  <option>4</option>
+                  <option>3</option>
+                  <option>2</option>
+                  <option>1</option>
+              </select>
+              </div>
+      </div>
+
+  <div class="row mb-3">
+      <div class="col-md-3">
+      <label for="floor" class="form-label">Floors</label>
+      <select id="floor" class="form-select" name="house[floor]" >
+        <option selected value="<%= house.floor%>">Default</option>
+        <option>4</option>
+        <option>3</option>
+        <option>2</option>
+        <option>1</option>
+        <option>G</option>
+      </select>
+      </div>
+          <div class="col-md-3">
+              <label for="area" class="form-label">Area(sqft)</label>
+              <input type="text" class="form-control" id="area" name="house[area]" value="<%= house.area %>" required>
+            </div>
+            <div class="col-md-3">
+              <label for="facing" class="form-label">Facing</label>
+              <select id="facing" class="form-select" name="house[facing]">
+                <option selected  value="<%= house.facing %>">Default</option>
+                <option>North</option>
+                <option>South</option>
+                <option>East</option>
+                <option>West</option>
+              </select>
+   
+              </div>
+            <div class="col-md-3">
+              <legend class="col-form-label col-sm-2 pt-0">Furnished</legend>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="house[furnished]" id="gridRadios1" value="<%= house.furnished %>" checked>
+                <label class="form-check-label" for="gridRadios1">
+                  Default
+                </label>
+              </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="house[furnished]" id="gridRadios1" value=" Full Furnished">
+                  <label class="form-check-label" for="gridRadios1">
+                    Full Furnished
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="house[furnished]" id="Semi Furnished" value="Semi Furnished">
+                  <label class="form-check-label" for="Semi Furnished">
+                      Semi Furnished
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="house[furnished]" id="Unfurnished" value="Unfurnished">
+                  <label class="form-check-label" for=" Unfurnished">
+                      Unfurnished
+                  </label>
+                </div>          
+      </div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-md-8">
+          <label for="image" class="form-label">Image</label>
+          <input type="text" class="form-control" id="image" name="house[image]" value="<%= house.image %>" required>
+        </div>
+        <div class="col-md-3">
+          <label for="price" class="form-label">Price</label>
+          <input type="text" class="form-control" id="price" name="house[price]" value="<%= house.price %>" required>
+        </div>
+      </div>
+                    <div class="mb-4">
+                      <center>
+                    <button class="btn bg-black text-white px-5">Edit</button>
+                  </center>
+                </div>
+            </div>
+        </div>
+    </form>
+    <style>
+    .btn{
+      margin-top: 25px;
+      width: 180px;
+      padding: 8px 20px;
+      outline: none;    
+      }
+    </style>
+
+
+   

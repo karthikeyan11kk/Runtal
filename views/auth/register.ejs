@@ -1,0 +1,95 @@
+<% layout("layout/boilerauth") %>
+    <form action="/register" method="post" novalidate class="needs-validation py-4  ">
+        <div class="row bg-black text-white register py-5 ">
+            <div class="col-6 ">
+                <h1 class="text-white text-center mb-5">REGISTER</h1>
+                  <div class="row mb-3">
+                    <div class="col-md-7">
+                            <label for="surname" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="surname" name="surname" required>   
+                            <div class="valid-feedback">
+                              Valid
+                            </div>
+                            <div class="invalid-feedback">
+                              Invalid
+                            </div>                      
+                    </div>
+                    <div class="col-md-5">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="text" class="form-control" id="phone" name="phone"required>
+                            <div class="valid-feedback">
+                              Valid
+                            </div>
+                            <div class="invalid-feedback">
+                              Invalid
+                            </div>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-md-7">
+                            <label for="username" class="form-label">E-mail</label>
+                            <input type="text" class="form-control" id="username" name="username" required>   
+                            <div class="valid-feedback">
+                              Valid
+                            </div>
+                            <div class="invalid-feedback">
+                              Invalid
+                            </div>                      
+                    </div>
+                    <div class="col-md-5">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="text" class="form-control" id="password" name="password" required>   
+                            <div class="valid-feedback">
+                              Valid
+                            </div>
+                            <div class="invalid-feedback">
+                              Invalid
+                            </div>                      
+                    </div>
+                  </div>
+                      <div class="mb-3">
+                      <center>
+                    <button class="btn bg-white text-black px-5">Register</button>
+                    <br>
+                    <a href="/login" class="text-white">Back To Login</a>
+                  </center>
+            </div>
+            </div>
+        </div>
+    </form>
+
+    <style>
+        form{
+          margin-top: 90px;
+        }
+        .btn{
+        margin-top: 25px;
+        margin-bottom: 10px;
+        width: 250px;
+        padding: 8px 20px;
+        outline: none;    
+        }
+    .register{
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+        color: white;
+        border: grey solid 1px;
+        border-radius: 25px;
+        
+    }
+    .register:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .register input{
+     color: black;
+     outline: none;
+}
+.input-group{
+     color: black;
+     outline: none;
+}
+    </style>
+
+
+
